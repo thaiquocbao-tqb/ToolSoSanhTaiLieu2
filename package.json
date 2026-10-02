@@ -1,0 +1,21 @@
+{
+  "name": "offline-contract-checker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "offline": "vite --host 127.0.0.1",
+    "prepare:offline": "node scripts/prepare-offline.mjs",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "pdfjs-dist": "4.10.38",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "vite": "7.3.6"
+  }
+}

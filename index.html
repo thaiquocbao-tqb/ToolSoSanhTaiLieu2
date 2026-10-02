@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f4f1">
+  <title>Đối chiếu hợp đồng</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Đối chiếu hợp đồng">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span>HỒ SƠ <b>/</b> ĐỐI CHIẾU</span>
+    </a>
+    <span class="local-indicator"><i></i> Xử lý trên thiết bị</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">KIỂM TRA VĂN BẢN</p>
+        <h1>Đối chiếu hợp đồng</h1>
+      </div>
+      <p class="intro-copy">Đưa ảnh và PDF về cùng một luồng văn bản. Xem các phần thêm, thiếu hoặc khác nhau.</p>
+    </section>
+
+    <section class="inputs" aria-label="Tài liệu cần đối chiếu">
+      <article class="document-slot">
+        <div class="slot-heading"><span class="step">01</span><h2>Ảnh hợp đồng</h2><span class="file-kind">PNG · JPG · WEBP</span></div>
+        <label class="dropzone" id="imageDrop" for="imageInput">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="24" height="22" rx="2"/><circle cx="12" cy="13" r="2.3"/><path d="m6 24 7-7 5 5 3-3 5 5M16 2v9m-3-3 3 3 3-3"/></svg>
+          <span class="drop-title">Thả ảnh vào đây</span>
+          <span class="drop-hint">hoặc <b>chọn ảnh</b></span>
+          <div class="file-info" id="imageInfo"></div>
+        </label>
+        <input class="file-input" id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/bmp">
+      </article>
+
+      <article class="document-slot">
+        <div class="slot-heading"><span class="step">02</span><h2>Bản PDF</h2><span class="file-kind">PDF · tối đa 50 MB</span></div>
+        <label class="dropzone" id="pdfDrop" for="pdfInput">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 3h11l6 6v20H8zM19 3v7h6M12 16h9m-9 4h9m-9 4h6M5 7v22h17"/></svg>
+          <span class="drop-title">Thả PDF vào đây</span>
+          <span class="drop-hint">hoặc <b>chọn PDF</b></span>
+          <div class="file-info" id="pdfInfo"></div>
+        </label>
+        <input class="file-input" id="pdfInput" type="file" accept="application/pdf,.pdf">
+      </article>
+    </section>
+
+    <div class="privacy-note"><span aria-hidden="true">●</span> Ảnh, PDF và model OCR được xử lý cục bộ; không gửi tài liệu lên mạng.</div>
+    <div class="action-row"><button class="primary-button" id="compareButton" type="button" disabled>Đối chiếu tài liệu</button></div>
+
+    <section class="progress" id="progressWrap" aria-live="polite" hidden>
+      <div class="progress-copy"><span id="progressText">Đang chuẩn bị…</span><span id="progressPercent">0%</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+    </section>
+    <div class="error-message" id="errorMessage" role="alert" hidden></div>
+
+    <section class="results" id="results" aria-live="polite" hidden>
+      <div class="results-heading">
+        <div><p class="eyebrow">BÁO CÁO ĐỐI CHIẾU</p><h2>Kết quả</h2><p class="result-meta" id="resultMeta"></p></div>
+        <div class="summary-counts"><span class="removed-count" id="removedStat">− 0 khác biệt</span><span class="added-count" id="addedStat">+ 0 khác biệt</span></div>
+      </div>
+      <p class="match-banner" id="matchBanner" hidden>Văn bản trích xuất giống nhau.</p>
+      <div class="diff-columns">
+        <article class="diff-pane">
+          <div class="pane-heading"><h3>VĂN BẢN TỪ ẢNH</h3><span id="imageWordCount"></span></div>
+          <div class="diff-text" id="imageText" contenteditable="true" role="textbox" aria-label="Văn bản nhận diện từ ảnh" aria-multiline="true" spellcheck="false"></div>
+        </article>
+        <article class="diff-pane">
+          <div class="pane-heading"><h3>VĂN BẢN TỪ PDF</h3><span id="pdfWordCount"></span></div>
+          <div class="diff-text" id="pdfText" contenteditable="true" role="textbox" aria-label="Văn bản trích xuất từ PDF" aria-multiline="true" spellcheck="false"></div>
+        </article>
+      </div>
+      <div class="result-actions"><button class="secondary-button" id="recompareButton" type="button" hidden>Cập nhật so sánh</button></div>
+      <div class="legend"><span><i class="legend-removed"></i>Có trong ảnh, không có trong PDF</span><span><i class="legend-added"></i>Có trong PDF, không có trong ảnh</span></div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>

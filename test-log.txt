@@ -1,0 +1,17 @@
+✔ normalizes case and canonically equivalent Vietnamese text (1.4023ms)
+✔ detects punctuation-only differences (0.3761ms)
+✔ keeps visually similar OCR characters distinct (0.5484ms)
+✔ escapes OCR text before inserting markup (1.1091ms)
+✔ counts Vietnamese words without counting punctuation (1.0835ms)
+✔ normalizes noisy OCR text while preserving Vietnamese and numbers (6.2958ms)
+✔ drops isolated OCR noise lines that inflate mismatch errors (0.2366ms)
+✔ keeps short selectable PDF text instead of treating the page as a scan (0.7952ms)
+✔ preserves line breaks from PDF text items (0.1976ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 101.3431
