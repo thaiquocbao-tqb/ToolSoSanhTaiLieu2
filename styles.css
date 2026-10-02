@@ -24,7 +24,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, [contenteditable="t
 main { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 43px 0 72px; }
 .intro { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 28px; }
 .eyebrow { margin: 0 0 8px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1.2px; }
-h1, .results-heading h2 { margin: 0; font: 500 36px/1.1 Georgia, "Times New Roman", serif; }
+h1, .results-heading h2 { margin: 0; font: 500 36px/1.1 "Segoe UI", Arial, sans-serif; letter-spacing: 0; }
 .intro-copy { max-width: 360px; margin: 0 0 2px; color: var(--muted); line-height: 1.65; }
 .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .document-slot { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
